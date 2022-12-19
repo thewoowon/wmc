@@ -23,10 +23,7 @@ export default function Home() {
           property="og:description"
           content="WMC는 모두가 함께 코드를 만드는 공간입니다."
         />
-        <meta
-          property="og:image"
-          content="https://imagedelivery.net/6qzLODAqs2g1LZbVYqtuQw/bb63b50a-7d84-464c-249a-9da9aa993900/public"
-        />
+        <meta property="og:image" content="/assets/logo/wmc_png.png" />
       </Head>
       <main className="font-sans-kr">
         <section className="py-20">
