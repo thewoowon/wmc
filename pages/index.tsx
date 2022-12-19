@@ -11,19 +11,17 @@ export default function Home() {
     <>
       <Head>
         <title>WMC</title>
-        <meta name="description" content="We Make the Code" />
-        <link rel="icon" href="/favicon.ico" />
         <meta
           property="og:url"
           content={`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/`}
         />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content="WMC - 모두가 만드는 공간" />
+        <meta property="og:title" content="WMC" />
+        <meta property="og:description" content="We Make the Code!" />
         <meta
-          property="og:description"
-          content="WMC는 모두가 함께 코드를 만드는 공간입니다."
+          property="og:image"
+          content="https://imagedelivery.net/6qzLODAqs2g1LZbVYqtuQw/0acf2d43-427e-461a-d2c9-e1f1f2cbd000/public"
         />
-        <meta property="og:image" content="/assets/logo/wmc_png.png" />
       </Head>
       <main className="font-sans-kr">
         <section className="py-20">
