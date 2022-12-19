@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef, useCallback } from 'react'
 
-const useScrollFadeInImage = () => {
+const useScrollFadeInRight = () => {
   const dom = useRef<HTMLDivElement>(null)
 
   const handleScroll = useCallback(([entry]: IntersectionObserverEntry[]) => {
@@ -32,9 +32,9 @@ const useScrollFadeInImage = () => {
     ref: dom,
     style: {
       opacity: 0,
-      transform: 'translate3d(0, 20%, 0)',
+      transform: 'translate3d(30%, 20%, 0)',
     },
   }
 }
 
-export default useScrollFadeInImage
+export default useScrollFadeInRight

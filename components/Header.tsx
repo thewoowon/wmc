@@ -24,7 +24,7 @@ export default function Header() {
 
   return (
     <header
-      className="bg-black text-zinc-300 font-sans-kr-light text-md xs:text-md"
+      className="bg-black text-zinc-300 font-sans-kr-light lg:text-md md:text-sm sm:text-sm text-xs"
       style={{ borderBottom: '0.5px solid rgba(99,102,241,0.8)' }}
     >
       <div
@@ -47,86 +47,88 @@ export default function Header() {
           ></Image>
         </div>
         <span className="m-auto"></span>
-        <div
-          className="pr-10 cursor-pointer flex justify-center items-center transition duration-200 ease-in-out hover:text-white"
-          onClick={() => {
-            router.push('/products')
-          }}
-        >
-          Home
-          {/* <IconBox
+        <div className="flex lg:gap-12 md:gap-10 sm:gap-6 xs:gap-4 gap-2 px-4">
+          <div
+            className="cursor-pointer flex justify-center items-center transition duration-200 ease-in-out hover:text-white"
+            onClick={() => {
+              router.push('/products')
+            }}
+          >
+            Home
+            {/* <IconBox
             stroke={1}
             onClick={() => {
               router.push('/products')
             }}
           ></IconBox> */}
-        </div>
-        <div
-          className="pr-10 cursor-pointer flex justify-center items-center transition duration-200 ease-in-out hover:text-white"
-          onClick={() => {
-            router.push('/wishlist')
-          }}
-        >
-          Who?
-          {/* <IconHeart
+          </div>
+          <div
+            className="cursor-pointer flex justify-center items-center transition duration-200 ease-in-out hover:text-white"
+            onClick={() => {
+              router.push('/wishlist')
+            }}
+          >
+            Who?
+            {/* <IconHeart
             stroke={1}
             onClick={() => {
               router.push('/wishlist')
             }}
           ></IconHeart> */}
-        </div>
-        <div
-          className="pr-10 cursor-pointer flex justify-center items-center transition duration-200 ease-in-out hover:text-white"
-          onClick={() => {
-            router.push('/cart')
-          }}
-        >
-          Project
-          {/* <IconShoppingCart
+          </div>
+          <div
+            className="cursor-pointer flex justify-center items-center transition duration-200 ease-in-out hover:text-white"
+            onClick={() => {
+              router.push('/cart')
+            }}
+          >
+            Project
+            {/* <IconShoppingCart
             stroke={1}
             onClick={() => {
               router.push('/cart')
             }}
           ></IconShoppingCart> */}
-        </div>
-        <div
-          className="pr-10 cursor-pointer flex justify-center items-center transition duration-200 ease-in-out hover:text-white"
-          onClick={() => {
-            router.push('/qna')
-          }}
-        >
-          Crew
-        </div>
-        <div
-          className="pr-10 cursor-pointer flex justify-center items-center transition duration-200 ease-in-out hover:text-white"
-          onClick={() => {
-            router.push('/qna')
-          }}
-        >
-          Blog
-        </div>
-        {session ? (
-          <div className="mr-4 flex justify-center items-center relative">
-            <Image
-              onClick={clickProfile}
-              className="rounded-full cursor-pointer mx-2"
-              alt=""
-              src={session.user?.image!}
-              width={30}
-              height={30}
-            ></Image>
-            {toggle && <ProfileMenu />}
           </div>
-        ) : (
           <div
-            className="flex justify-center items-center transition duration-200 ease-in-out hover:text-white"
+            className="cursor-pointer flex justify-center items-center transition duration-200 ease-in-out hover:text-white"
             onClick={() => {
-              signIn()
+              router.push('/qna')
             }}
           >
-            Opinion
+            Crew
           </div>
-        )}
+          <div
+            className="cursor-pointer flex justify-center items-center transition duration-200 ease-in-out hover:text-white"
+            onClick={() => {
+              router.push('/qna')
+            }}
+          >
+            Blog
+          </div>
+          {session ? (
+            <div className="mr-4 flex justify-center items-center relative">
+              <Image
+                onClick={clickProfile}
+                className="rounded-full cursor-pointer mx-2"
+                alt=""
+                src={session.user?.image!}
+                width={30}
+                height={30}
+              ></Image>
+              {toggle && <ProfileMenu />}
+            </div>
+          ) : (
+            <div
+              className="flex justify-center items-center transition duration-200 ease-in-out hover:text-white"
+              onClick={() => {
+                signIn()
+              }}
+            >
+              Opinion
+            </div>
+          )}
+        </div>
       </div>
     </header>
   )

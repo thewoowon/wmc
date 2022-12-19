@@ -1,4 +1,7 @@
 import useScrollFadeIn from 'hooks/useScrollFadeIn'
+import useScrollFadeInLeft from 'hooks/useScrollFadeInLeft'
+import useScrollFadeInImage from 'hooks/useScrollFadeInLeft'
+import useScrollFadeInRight from 'hooks/useScrollFadeInRight'
 import Head from 'next/head'
 import Image from 'next/image'
 export default function Home() {
@@ -7,6 +10,10 @@ export default function Home() {
   const animatedItem_main_3 = useScrollFadeIn()
   const animatedItem_main_4 = useScrollFadeIn()
   const animatedItem_main_5 = useScrollFadeIn()
+  const animatedItem_main_6 = useScrollFadeIn()
+  const animatedItem_main_7 = useScrollFadeIn()
+  const animatedItem_main_8 = useScrollFadeInLeft()
+  const animatedItem_main_9 = useScrollFadeInRight()
   return (
     <>
       <Head>
@@ -48,7 +55,7 @@ export default function Home() {
                 </button>
               </div>
             </div>
-            <div className="ml-10">
+            <div className="flex justify-center items-center">
               <Image
                 alt="main_image"
                 width={500}
@@ -59,58 +66,86 @@ export default function Home() {
           </div>
         </section>
         <section
-          style={{ height: '600px' }}
-          className="flex flex-col justify-center items-center py-20 text-white"
+          style={{
+            height: '800px',
+            backgroundImage: "url('/assets/figure/wmc_1.png')",
+          }}
+          className="object-cover bg-center bg-no-repeat bg-cover flex flex-col justify-center items-center py-20 text-white"
         >
           <div
             {...animatedItem_main_1}
-            className="font-sans-kr-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl"
+            className="py-2 font-sans-kr-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl"
           >
-            💻 We make the Code!
+            We make the Code.
+          </div>
+          <div
+            {...animatedItem_main_2}
+            className="py-2 font-sans-kr-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl"
+          >
+            우리 함께 만들어요!
           </div>
         </section>
         <section
-          style={{ height: '600px' }}
+          style={{ height: '300px' }}
           className="flex flex-col justify-center items-center py-20 text-white"
         >
           <div
-            {...animatedItem_main_2}
+            {...animatedItem_main_8}
             className="font-sans-kr-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl"
           >
             🌈 여기 열린 공간에서
           </div>
         </section>
         <section
-          style={{ height: '600px' }}
+          style={{ height: '300px' }}
           className="flex flex-col justify-center items-center py-20 text-white"
         >
           <div
-            {...animatedItem_main_3}
+            {...animatedItem_main_9}
             className="font-sans-kr-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl"
           >
             🥳 개발자, 디자이너, 기획자가 함께
           </div>
         </section>
         <section
-          style={{ height: '600px' }}
+          style={{ height: '300px' }}
           className="flex flex-col justify-center items-center py-20 text-white"
         >
           <div
-            {...animatedItem_main_4}
+            {...animatedItem_main_3}
             className="font-sans-kr-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl"
           >
             🤩 상상만했던 코드와 프로젝트를
           </div>
         </section>
         <section
-          style={{ height: '600px' }}
+          style={{ height: '300px' }}
           className="flex flex-col justify-center items-center py-20 text-white"
         >
           <div
-            {...animatedItem_main_5}
+            {...animatedItem_main_4}
             className="font-sans-kr-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl"
           >
             😆 만들어가요!
+          </div>
+        </section>
+        <section
+          style={{
+            height: '800px',
+            backgroundImage: "url('/assets/figure/wmc_2.png')",
+          }}
+          className="object-cover bg-center bg-no-repeat bg-cover flex flex-col justify-center items-center py-20 text-white"
+        >
+          <div
+            {...animatedItem_main_5}
+            className="py-2 font-sans-kr-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl"
+          >
+            지금 바로 참여하기
+          </div>
+          <div {...animatedItem_main_6} className="py-10">
+            <button className="text-3xl font-bold rounded-md px-8 py-6 bg-indigo-500 text-white transition duration-200 ease-in-out hover:bg-indigo-600">
+              프로젝트 보기
+            </button>
           </div>
         </section>
       </main>
