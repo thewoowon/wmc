@@ -1,6 +1,12 @@
+import useScrollFadeIn from 'hooks/useScrollFadeIn'
 import Head from 'next/head'
 import Image from 'next/image'
 export default function Home() {
+  const animatedItem_main_1 = useScrollFadeIn()
+  const animatedItem_main_2 = useScrollFadeIn()
+  const animatedItem_main_3 = useScrollFadeIn()
+  const animatedItem_main_4 = useScrollFadeIn()
+  const animatedItem_main_5 = useScrollFadeIn()
   return (
     <>
       <Head>
@@ -47,18 +53,71 @@ export default function Home() {
                 </button>
               </div>
             </div>
-            <div className="ml-20">
+            <div className="ml-10">
               <Image
                 alt="main_image"
-                width={300}
-                height={300}
-                src="https://imagedelivery.net/6qzLODAqs2g1LZbVYqtuQw/bb63b50a-7d84-464c-249a-9da9aa993900/public"
+                width={500}
+                height={500}
+                src="/assets/logo/wmc_png.png"
               />
             </div>
           </div>
         </section>
-        <section></section>
-        <section></section>
+        <section
+          style={{ height: '600px' }}
+          className="flex flex-col justify-center items-center py-20 text-white"
+        >
+          <div
+            {...animatedItem_main_1}
+            className="font-sans-kr-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl"
+          >
+            💻 We make the Code!
+          </div>
+        </section>
+        <section
+          style={{ height: '600px' }}
+          className="flex flex-col justify-center items-center py-20 text-white"
+        >
+          <div
+            {...animatedItem_main_2}
+            className="font-sans-kr-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl"
+          >
+            🌈 여기 열린 공간에서
+          </div>
+        </section>
+        <section
+          style={{ height: '600px' }}
+          className="flex flex-col justify-center items-center py-20 text-white"
+        >
+          <div
+            {...animatedItem_main_3}
+            className="font-sans-kr-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl"
+          >
+            🥳 개발자, 디자이너, 기획자가 함께
+          </div>
+        </section>
+        <section
+          style={{ height: '600px' }}
+          className="flex flex-col justify-center items-center py-20 text-white"
+        >
+          <div
+            {...animatedItem_main_4}
+            className="font-sans-kr-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl"
+          >
+            🤩 상상만했던 코드와 프로젝트를
+          </div>
+        </section>
+        <section
+          style={{ height: '600px' }}
+          className="flex flex-col justify-center items-center py-20 text-white"
+        >
+          <div
+            {...animatedItem_main_5}
+            className="font-sans-kr-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl"
+          >
+            😆 만들어가요!
+          </div>
+        </section>
       </main>
     </>
   )
