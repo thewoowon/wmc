@@ -37,13 +37,14 @@ export default function Header() {
             router.push('/')
           }}
         >
-          WMC
-          {/* <IconHome
-            stroke={1}
-            onClick={() => {
-              router.push('/')
-            }}
-          ></IconHome> */}
+          <Image
+            onClick={clickProfile}
+            className="rounded-full cursor-pointer mx-2"
+            alt=""
+            src={'/assets/logo/wmc_png.png'}
+            width={80}
+            height={80}
+          ></Image>
         </div>
         <span className="m-auto"></span>
         <div

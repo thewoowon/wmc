@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer
       className="py-5 bg-black text-white font-sans-kr-light text-md xs:text-md"
-      style={{ borderTop: '0.5px solid rgba(99,102,241,0.8)' }}
+      style={{ borderTop: '0.5px solid rgba(255,255,255,1)' }}
     >
       <div
         className="flex justify-between mx-auto"
