@@ -24,7 +24,7 @@ export default function Header() {
 
   return (
     <header
-      className="bg-black text-zinc-300 font-sans-kr-light lg:text-md md:text-sm sm:text-sm text-xs"
+      className="fixed w-full z-30 bg-black text-zinc-300 font-sans-kr-bold lg:text-md md:text-sm sm:text-sm text-xs uppercase"
       style={{ borderBottom: '0.5px solid rgba(99,102,241,0.8)' }}
     >
       <div
@@ -120,7 +120,7 @@ export default function Header() {
             </div>
           ) : (
             <div
-              className="flex justify-center items-center transition duration-200 ease-in-out hover:text-white"
+              className="cursor-pointer flex justify-center items-center transition duration-200 ease-in-out hover:text-white"
               onClick={() => {
                 signIn()
               }}
