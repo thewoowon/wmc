@@ -31,7 +31,7 @@ export default function Home() {
         />
       </Head>
       <main className="font-sans-kr">
-        <section className="py-20">
+        <section className="py-20 flex items-center justify-center min-h-screen">
           <div className="flex flex-wrap justify-center items-center">
             <div className="flex flex-col justify-center items-start mr-20">
               <div className="pt-6 pb-2 text-6xl font-sans-kr-bold text-white">
@@ -70,7 +70,7 @@ export default function Home() {
             height: '800px',
             backgroundImage: "url('/assets/figure/wmc_1.png')",
           }}
-          className="object-cover bg-center bg-no-repeat bg-cover flex flex-col justify-center items-center py-20 text-white"
+          className=" min-h-screen object-cover bg-center bg-no-repeat bg-cover flex flex-col justify-center items-center py-20 text-white"
         >
           <div
             {...animatedItem_main_1}
@@ -85,56 +85,58 @@ export default function Home() {
             우리 함께 만들어요!
           </div>
         </section>
-        <section
-          style={{ height: '300px' }}
-          className="flex flex-col justify-center items-center py-20 text-white"
-        >
-          <div
-            {...animatedItem_main_8}
-            className="font-sans-kr-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl"
+        <section className="min-h-screen">
+          <section
+            style={{ height: '300px' }}
+            className="flex flex-col justify-center items-center py-20 text-white"
           >
-            🌈 여기 열린 공간에서
-          </div>
-        </section>
-        <section
-          style={{ height: '300px' }}
-          className="flex flex-col justify-center items-center py-20 text-white"
-        >
-          <div
-            {...animatedItem_main_9}
-            className="font-sans-kr-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl"
+            <div
+              {...animatedItem_main_8}
+              className="font-sans-kr-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl"
+            >
+              🌈 여기 열린 공간에서
+            </div>
+          </section>
+          <section
+            style={{ height: '300px' }}
+            className="flex flex-col justify-center items-center py-20 text-white"
           >
-            🥳 개발자, 디자이너, 기획자가 함께
-          </div>
-        </section>
-        <section
-          style={{ height: '300px' }}
-          className="flex flex-col justify-center items-center py-20 text-white"
-        >
-          <div
-            {...animatedItem_main_3}
-            className="font-sans-kr-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl"
+            <div
+              {...animatedItem_main_9}
+              className="font-sans-kr-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl"
+            >
+              🥳 개발자, 디자이너, 기획자가 함께
+            </div>
+          </section>
+          <section
+            style={{ height: '300px' }}
+            className="flex flex-col justify-center items-center py-20 text-white"
           >
-            🤩 상상만했던 코드와 프로젝트를
-          </div>
-        </section>
-        <section
-          style={{ height: '300px' }}
-          className="flex flex-col justify-center items-center py-20 text-white"
-        >
-          <div
-            {...animatedItem_main_4}
-            className="font-sans-kr-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl"
+            <div
+              {...animatedItem_main_3}
+              className="font-sans-kr-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl"
+            >
+              🤩 상상만했던 코드와 프로젝트를
+            </div>
+          </section>
+          <section
+            style={{ height: '300px' }}
+            className="flex flex-col justify-center items-center py-20 text-white"
           >
-            😆 만들어가요!
-          </div>
+            <div
+              {...animatedItem_main_4}
+              className="font-sans-kr-bold lg:text-6xl md:text-5xl sm:text-4xl text-3xl"
+            >
+              😆 만들어가요!
+            </div>
+          </section>
         </section>
         <section
           style={{
             height: '800px',
             backgroundImage: "url('/assets/figure/wmc_2.png')",
           }}
-          className="object-cover bg-center bg-no-repeat bg-cover flex flex-col justify-center items-center py-20 text-white"
+          className="min-h-screen object-cover bg-center bg-no-repeat bg-cover flex flex-col justify-center items-center py-20 text-white"
         >
           <div
             {...animatedItem_main_5}
