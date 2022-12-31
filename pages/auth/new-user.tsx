@@ -1,13 +1,13 @@
 import { FormError } from '@components/FormError'
 import { useForm } from 'react-hook-form'
 import Image from 'next/image'
-import ClassView from '@components/ClassView'
 import { useDaumPostcodePopup } from 'react-daum-postcode'
 import { useMutation } from '@tanstack/react-query'
 import { User } from '@prisma/client'
 import toast from 'react-hot-toast'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
+import React from 'react'
 
 export type ICreateAccountForm = {
   email: string
@@ -309,7 +309,6 @@ export default function NewUser() {
       >
         <div className="px-10 flex flex-col gap-2">
           <div className="py-4 font-bold"></div>
-          <ClassView></ClassView>
         </div>
       </div>
     </div>
