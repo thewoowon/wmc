@@ -54,27 +54,7 @@ export default function Header() {
               router.push('/products')
             }}
           >
-            Home
-            {/* <IconBox
-            stroke={1}
-            onClick={() => {
-              router.push('/products')
-            }}
-          ></IconBox> */}
-          </div>
-          <div
-            className="cursor-pointer flex justify-center items-center transition duration-200 ease-in-out hover:text-white"
-            onClick={() => {
-              router.push('/wishlist')
-            }}
-          >
-            Who?
-            {/* <IconHeart
-            stroke={1}
-            onClick={() => {
-              router.push('/wishlist')
-            }}
-          ></IconHeart> */}
+            홈
           </div>
           <div
             className="cursor-pointer flex justify-center items-center transition duration-200 ease-in-out hover:text-white"
@@ -82,13 +62,7 @@ export default function Header() {
               router.push('/cart')
             }}
           >
-            Project
-            {/* <IconShoppingCart
-            stroke={1}
-            onClick={() => {
-              router.push('/cart')
-            }}
-          ></IconShoppingCart> */}
+            프로젝트
           </div>
           <div
             className="cursor-pointer flex justify-center items-center transition duration-200 ease-in-out hover:text-white"
@@ -96,7 +70,7 @@ export default function Header() {
               router.push('/qna')
             }}
           >
-            Crew
+            크루
           </div>
           <div
             className="cursor-pointer flex justify-center items-center transition duration-200 ease-in-out hover:text-white"
@@ -104,7 +78,7 @@ export default function Header() {
               router.push('/qna')
             }}
           >
-            Blog
+            블로그
           </div>
           {session ? (
             <div className="mr-4 flex justify-center items-center relative">
@@ -125,7 +99,7 @@ export default function Header() {
                 signIn()
               }}
             >
-              Opinion
+              로그인
             </div>
           )}
         </div>
