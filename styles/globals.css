@@ -19,3 +19,38 @@
 
 @tailwind components;
 @tailwind utilities;
+
+
+.login-button{
+  color:rgba(99,102,241,0.8);
+}
+
+.login-button:hover{
+  background-color: rgba(99,102,241,0.8);
+  color: white;
+}
+
+.snowflake{
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top:-8px;
+
+}
+
+.snowflake-void{
+  height: 100%;
+  position: absolute;
+  top:-8px;
+}
+
+@keyframes snowFall {
+  0% {
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}

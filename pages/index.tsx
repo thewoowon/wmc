@@ -31,7 +31,7 @@ export default function Home() {
         />
       </Head>
       <main className="font-sans-kr">
-        <section className="py-20 flex items-center justify-center min-h-screen">
+        <section className="flex items-center justify-center min-h-screen">
           <div className="flex flex-wrap justify-center items-center">
             <div className="flex flex-col justify-center items-start mr-20">
               <div className="pt-6 pb-2 text-6xl font-sans-kr-bold text-white">

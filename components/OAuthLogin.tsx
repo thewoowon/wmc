@@ -27,11 +27,9 @@ export default function OAuthLogin() {
             className="relative text-5xl"
             style={{ fontFamily: 'Kashie-Mercy' }}
           >
-            LoveKong Stained Glass
+            We Make the Code!
           </div>
-          <div className="relative font-sans-kr-light text-xl py-3">
-            러브콩 스테인드 글라스
-          </div>
+          <div className="relative font-sans-kr-light text-xl py-3">WMC</div>
           <div className="text-xl">
             안녕하세요! {session.user?.name}님 😆😆😆
           </div>

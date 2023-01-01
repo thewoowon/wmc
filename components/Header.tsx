@@ -51,7 +51,7 @@ export default function Header() {
           <div
             className="cursor-pointer flex justify-center items-center transition duration-200 ease-in-out hover:text-white"
             onClick={() => {
-              router.push('/products')
+              router.push('/')
             }}
           >
             홈
@@ -59,7 +59,7 @@ export default function Header() {
           <div
             className="cursor-pointer flex justify-center items-center transition duration-200 ease-in-out hover:text-white"
             onClick={() => {
-              router.push('/cart')
+              router.push('/project')
             }}
           >
             프로젝트
@@ -67,7 +67,7 @@ export default function Header() {
           <div
             className="cursor-pointer flex justify-center items-center transition duration-200 ease-in-out hover:text-white"
             onClick={() => {
-              router.push('/qna')
+              router.push('/crew')
             }}
           >
             크루
@@ -75,7 +75,7 @@ export default function Header() {
           <div
             className="cursor-pointer flex justify-center items-center transition duration-200 ease-in-out hover:text-white"
             onClick={() => {
-              router.push('/qna')
+              router.push('/blog')
             }}
           >
             블로그
@@ -110,7 +110,7 @@ export default function Header() {
 
 const ProfileMenu = () => {
   const menus = [
-    { title: '나의 주문', link: '/my' },
+    { title: '나의 프로젝트', link: '/my' },
     { title: '로그아웃', link: '/auth/signout' },
   ]
   return (

@@ -86,18 +86,18 @@ export default function SignIn({
     }
   }
   return (
-    <div className="w-full h-screen flex justify-center mt-20">
-      <div className="flex flex-col font-sans-kr">
+    <div className="w-full h-screen flex justify-center">
+      <div className="flex flex-col font-sans-kr py-36">
         {session ? (
           <div
             style={{ height: '500px' }}
             className="flex flex-col justify-center items-center font-sans-kr-light"
           >
             <div
-              className="relative text-5xl"
+              className="relative text-5xl text-white"
               style={{ fontFamily: 'Kashie-Mercy' }}
             >
-              LoveKong Stained Glass
+              We Make the Code
             </div>
             <div className="relative font-sans-kr-light text-xl py-3">
               러브콩 스테인드 글라스
@@ -122,7 +122,7 @@ export default function SignIn({
           </div>
         ) : (
           <div className="w-full">
-            <div className="font-sans-kr-light">
+            <div className="font-sans-kr-light text-xl font-bold text-white">
               사용자의 로그인 정보가 없습니다. 로그인해주세요.
             </div>
             <form
@@ -174,7 +174,8 @@ export default function SignIn({
               )}
               <ButtonLogin
                 onSubmit={handleSubmit(onSubmit)}
-                className="w-full my-2 flex justify-center items-center shadow-lg hover:bg-zinc-100 bg-white text-black border-2 border-zinc-500"
+                className="w-full my-2 flex justify-center items-center shadow-lg login-button"
+                style={{ border: '2px solid rgba(99,102,241,0.8)' }}
               >
                 <span className="px-2 font-bold">이메일 로그인</span>
               </ButtonLogin>
@@ -198,7 +199,7 @@ export default function SignIn({
             >
               <span className="px-2 font-bold">NAVER 로그인</span>
             </ButtonBig>
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center text-white">
               아직 회원이 아니신가요?
               <Link
                 className="text-blue-500 px-2 my-4 border-b-blue-500 hover:border-b "

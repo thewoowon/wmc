@@ -148,7 +148,7 @@ export default function NewUser() {
   }
 
   return (
-    <div className="max-w-5xl flex flex-wrap justify-center my-20 mx-auto">
+    <div className="max-w-5xl flex flex-wrap justify-center py-36 mx-auto text-white">
       <div
         className="flex flex-col font-sans-kr px-2 py-4"
         style={{ width: '400px' }}
@@ -291,8 +291,7 @@ export default function NewUser() {
               type="checkbox"
               className="mr-2 mt-0.5"
             />
-            LoveKong Stained Glass 이용을 위한 개인정보 제공 및 수집에
-            동의합니다.
+            WMC 이용을 위한 개인정보 제공 및 수집에 동의합니다.
           </label>
           <button
             type="submit"
