@@ -25,14 +25,14 @@ export default function App({
   })
 
   useEffect(() => {
-    const MIN_DURATION = 10
+    const MIN_DURATION = 5
     const body = document.querySelector('body')
 
     function makeSnowflake() {
       const snowflake = document.createElement('div')
       const delay = Math.random() * 10
       const initialOpacity = Math.random()
-      const duration = Math.random() * 20 + MIN_DURATION
+      const duration = Math.random() * 5 + MIN_DURATION
 
       snowflake.classList.add('snowflake-void')
       snowflake.innerText = '❄️'
@@ -45,6 +45,7 @@ export default function App({
 
       setTimeout(() => {
         body?.removeChild(snowflake)
+        makeSnowflake()
       }, (duration + delay) * 1000)
     }
 
@@ -56,7 +57,7 @@ export default function App({
     }
     makeSnowflake()
     for (let i = 0; i < 100; i++) {
-      setTimeout(makeSnowflake, i * 500)
+      setTimeout(makeSnowflake, i * 200)
     }
   }, [])
 
