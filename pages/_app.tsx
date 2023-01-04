@@ -1,12 +1,12 @@
 import type { AppProps } from 'next/app'
 import '../styles/globals.css'
+import '../styles/style_matter.js.css'
 import '../styles/tailwindcss.css'
 import { SessionProvider } from 'next-auth/react'
 import Header from '@components/Header'
 import Footer from '@components/Footer'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Session } from 'next-auth'
-import Script from 'next/script'
 import { useEffect } from 'react'
 
 export default function App({

@@ -4,7 +4,14 @@ import useScrollFadeInImage from 'hooks/useScrollFadeInLeft'
 import useScrollFadeInRight from 'hooks/useScrollFadeInRight'
 import Head from 'next/head'
 import Image from 'next/image'
+import Script from 'next/script'
+import { useEffect, useRef } from 'react'
+import Matter from 'matter-js'
+
 export default function Home() {
+  const boxRef = useRef(null)
+  const canvasRef = useRef(null)
+
   const animatedItem_main_1 = useScrollFadeIn()
   const animatedItem_main_2 = useScrollFadeIn()
   const animatedItem_main_3 = useScrollFadeIn()
@@ -14,6 +21,46 @@ export default function Home() {
   const animatedItem_main_7 = useScrollFadeIn()
   const animatedItem_main_8 = useScrollFadeInLeft()
   const animatedItem_main_9 = useScrollFadeInRight()
+
+  useEffect(() => {
+    let Engine = Matter.Engine
+    let Render = Matter.Render
+    let World = Matter.World
+    let Bodies = Matter.Bodies
+
+    let engine = Engine.create({})
+
+    let render = Render.create({
+      element: boxRef.current ?? undefined,
+      engine: engine,
+      canvas: canvasRef.current ?? undefined,
+      options: {
+        width: 300,
+        height: 300,
+        background: 'rgba(255, 0, 0, 0.5)',
+        wireframes: false,
+      },
+    })
+
+    const floor = Bodies.rectangle(150, 300, 300, 20, {
+      isStatic: true,
+      render: {
+        fillStyle: 'blue',
+      },
+    })
+
+    const ball = Bodies.circle(150, 0, 10, {
+      restitution: 0.9,
+      render: {
+        fillStyle: 'yellow',
+      },
+    })
+
+    World.add(engine.world, [floor, ball])
+
+    Engine.run(engine)
+    Render.run(render)
+  }, [])
   return (
     <>
       <Head>
@@ -30,6 +77,15 @@ export default function Home() {
           content="https://imagedelivery.net/6qzLODAqs2g1LZbVYqtuQw/0acf2d43-427e-461a-d2c9-e1f1f2cbd000/public"
         />
       </Head>
+      <div
+        ref={boxRef}
+        style={{
+          width: 300,
+          height: 300,
+        }}
+      >
+        <canvas ref={canvasRef} />
+      </div>
       <main className="font-sans-kr">
         <section className="flex items-center justify-center min-h-screen">
           <div className="flex flex-wrap justify-center items-center">
@@ -64,6 +120,12 @@ export default function Home() {
               />
             </div>
           </div>
+        </section>
+        <section
+          style={{ height: '800px' }}
+          className="min-h-screen object-cover bg-center bg-no-repeat bg-cover flex flex-col justify-center items-center py-20 text-white"
+        >
+          <div className="matterjs"></div>
         </section>
         <section
           style={{
