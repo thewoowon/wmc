@@ -37,6 +37,7 @@
   background-color: white;
   position: absolute;
   top:-8px;
+  z-index: 9999;
 
 }
 
@@ -44,13 +45,13 @@
   height: 100%;
   position: absolute;
   top:-8px;
-}
+  z-index: 9999;
+  font-size: 30px;}
 
 @keyframes snowFall {
   0% {
   }
   100% {
     transform: translateY(100%);
-    opacity: 0;
   }
 }

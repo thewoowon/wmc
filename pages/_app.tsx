@@ -30,9 +30,17 @@ export default function App({
 
     function makeSnowflake() {
       const snowflake = document.createElement('div')
+      //const snowSocks = document.createElement('div')
       const delay = Math.random() * 10
       const initialOpacity = Math.random()
       const duration = Math.random() * 5 + MIN_DURATION
+
+      // snowSocks.classList.add('snowflake-void')
+      // snowSocks.innerText = '🎁'
+      // snowSocks.style.left = Math.random() * window.innerWidth + 'px'
+      // snowSocks.style.animationDelay = delay + 's'
+      // snowSocks.style.opacity = initialOpacity + ''
+      // snowSocks.style.animation = `snowFall ${duration}s linear infinite`
 
       snowflake.classList.add('snowflake-void')
       snowflake.innerText = '❄️'
@@ -42,11 +50,13 @@ export default function App({
       snowflake.style.animation = `snowFall ${duration}s linear infinite`
 
       body?.appendChild(snowflake)
+      //body?.appendChild(snowSocks)
 
       setTimeout(() => {
         body?.removeChild(snowflake)
+        //body?.removeChild(snowSocks)
         makeSnowflake()
-      }, (duration + delay) * 1000)
+      }, (duration + delay) * 2000)
     }
 
     function removeSnowflake() {
@@ -56,8 +66,8 @@ export default function App({
       }
     }
     makeSnowflake()
-    for (let i = 0; i < 100; i++) {
-      setTimeout(makeSnowflake, i * 200)
+    for (let i = 0; i < 20; i++) {
+      setTimeout(makeSnowflake, i * 1000)
     }
   }, [])
 
