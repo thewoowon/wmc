@@ -24,53 +24,6 @@ export default function App({
     },
   })
 
-  useEffect(() => {
-    const MIN_DURATION = 5
-    const body = document.querySelector('body')
-
-    function makeSnowflake() {
-      const snowflake = document.createElement('div')
-      //const snowSocks = document.createElement('div')
-      const delay = Math.random() * 10
-      const initialOpacity = Math.random()
-      const duration = Math.random() * 5 + MIN_DURATION
-
-      // snowSocks.classList.add('snowflake-void')
-      // snowSocks.innerText = '🎁'
-      // snowSocks.style.left = Math.random() * window.innerWidth + 'px'
-      // snowSocks.style.animationDelay = delay + 's'
-      // snowSocks.style.opacity = initialOpacity + ''
-      // snowSocks.style.animation = `snowFall ${duration}s linear infinite`
-
-      snowflake.classList.add('snowflake-void')
-      snowflake.innerText = '❄️'
-      snowflake.style.left = Math.random() * window.innerWidth + 'px'
-      snowflake.style.animationDelay = delay + 's'
-      snowflake.style.opacity = initialOpacity + ''
-      snowflake.style.animation = `snowFall ${duration}s linear infinite`
-
-      body?.appendChild(snowflake)
-      //body?.appendChild(snowSocks)
-
-      setTimeout(() => {
-        body?.removeChild(snowflake)
-        //body?.removeChild(snowSocks)
-        makeSnowflake()
-      }, (duration + delay) * 2000)
-    }
-
-    function removeSnowflake() {
-      const snowflake = document.querySelector('.snowflake-void')
-      if (snowflake) {
-        snowflake.remove()
-      }
-    }
-    makeSnowflake()
-    for (let i = 0; i < 20; i++) {
-      setTimeout(makeSnowflake, i * 1000)
-    }
-  }, [])
-
   return (
     <SessionProvider>
       <QueryClientProvider client={queryClient}>

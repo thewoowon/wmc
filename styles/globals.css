@@ -22,11 +22,11 @@
 
 
 .login-button{
-  color:rgba(99,102,241,0.8);
+  background-color: rgba(99,102,241,0.8);
 }
 
 .login-button:hover{
-  background-color: rgba(99,102,241,0.8);
+  background-color: rgba(71, 74, 236, 0.8);
   color: white;
 }
 
