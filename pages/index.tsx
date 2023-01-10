@@ -139,10 +139,10 @@ export default function Home() {
           </div>
         </section>
         <section
-          style={{ height: '800px' }}
-          className="min-h-screen w-full flex flex-col justify-center items-center"
+          style={{ height: '1000px' }}
+          className="w-full flex flex-col justify-center items-center"
         >
-          <MatterComposition {...animatedItem_main_10}></MatterComposition>
+          <MatterComposition></MatterComposition>
         </section>
         <section
           style={{
