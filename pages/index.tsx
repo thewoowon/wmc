@@ -19,6 +19,7 @@ import {
 } from 'matter-js'
 import { useRouter } from 'next/router'
 import { signIn } from 'next-auth/react'
+import MatterComposition from '@components/MatterComposition'
 
 export default function Home() {
   const router = useRouter()
@@ -141,7 +142,7 @@ export default function Home() {
           style={{ height: '800px' }}
           className="min-h-screen w-full flex flex-col justify-center items-center"
         >
-          <PressStart {...animatedItem_main_10}></PressStart>
+          <MatterComposition></MatterComposition>
         </section>
         <section
           style={{
@@ -166,7 +167,7 @@ export default function Home() {
         <section className="min-h-screen">
           <section
             style={{ height: '300px' }}
-            className="flex flex-col justify-center items-center py-20 text-white"
+            className="flex flex-col justify-center items-center py-20 text-white overflow-hidden"
           >
             <div
               {...animatedItem_main_8}
@@ -177,7 +178,7 @@ export default function Home() {
           </section>
           <section
             style={{ height: '300px' }}
-            className="flex flex-col justify-center items-center py-20 text-white"
+            className="flex flex-col justify-center items-center py-20 text-white overflow-hidden"
           >
             <div
               {...animatedItem_main_9}
@@ -188,7 +189,7 @@ export default function Home() {
           </section>
           <section
             style={{ height: '300px' }}
-            className="flex flex-col justify-center items-center py-20 text-white"
+            className="flex flex-col justify-center items-center py-20 text-white overflow-hidden"
           >
             <div
               {...animatedItem_main_3}
@@ -199,7 +200,7 @@ export default function Home() {
           </section>
           <section
             style={{ height: '300px' }}
-            className="flex flex-col justify-center items-center py-20 text-white"
+            className="flex flex-col justify-center items-center py-20 text-white overflow-hidden"
           >
             <div
               {...animatedItem_main_4}
