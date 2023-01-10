@@ -52,6 +52,6 @@
   0% {
   }
   100% {
-    transform: translateY(100%);
+    transform: translate(200%,100%);
   }
 }

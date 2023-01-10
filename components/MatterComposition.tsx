@@ -1,12 +1,62 @@
-import { useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import { Engine, Render, Bodies, World, Runner } from 'matter-js'
 import { debounce } from 'lodash'
 
-function MatterComposition() {
+function MatterComposition({
+  ref,
+  style,
+}: {
+  ref: React.RefObject<HTMLDivElement>
+  style: React.CSSProperties
+}) {
   const scene = useRef<HTMLDivElement>(null)
   const isPressed = useRef(false)
   const engine = useRef(Engine.create())
   const useRender = useRef<Render>(null)
+
+  const handleScroll = useCallback(([entry]: IntersectionObserverEntry[]) => {
+    const { current } = scene
+    if (entry.isIntersecting && current) {
+      // 원하는 이벤트를 추가 할 것
+      current.style.transitionProperty = 'opacity'
+      current.style.transitionDuration = '1s'
+      current.style.transitionTimingFunction = 'cubic-bezier(0, 0, 0.2, 1)'
+      current.style.transitionDelay = '0s'
+      current.style.opacity = '1'
+    }
+
+    const cw = window.innerWidth
+    World.add(engine.current.world, [
+      Bodies.circle(Math.random() * cw, 0, 200, {
+        render: { fillStyle: 'red' },
+      }),
+    ])
+    World.add(engine.current.world, [
+      Bodies.rectangle(Math.random() * cw, 0, 300, 300, {
+        render: { fillStyle: 'blue' },
+      }),
+    ])
+    World.add(engine.current.world, [
+      Bodies.polygon(Math.random() * cw, 0, 5, 200, {
+        render: { fillStyle: 'green' },
+      }),
+    ])
+    World.add(engine.current.world, [
+      Bodies.polygon(Math.random() * cw, 0, 6, 200, {
+        render: { fillStyle: 'orange' },
+      }),
+    ])
+    World.add(engine.current.world, [
+      Bodies.polygon(Math.random() * cw, 0, 8, 200, {
+        render: { fillStyle: 'yellow' },
+      }),
+    ])
+    World.add(engine.current.world, [
+      Bodies.polygon(Math.random() * cw, 0, 10, 200, {
+        render: { fillStyle: 'white' },
+      }),
+    ])
+  }, [])
 
   // const handleResize = debounce(() =>{
   //       const cw = window.innerWidth
@@ -108,6 +158,7 @@ function MatterComposition() {
           render: { fillStyle: '#000000' },
         }),
       ])
+
       Runner.run(engine.current)
       Render.run(render)
     }, 1000)
@@ -120,15 +171,20 @@ function MatterComposition() {
       Engine.clear(engine.current)
       render.canvas.remove()
       window.removeEventListener('resize', handleResize)
-      //   render.canvas = new HTMLCanvasElement()
-      //   render.context = new CanvasRenderingContext2D()
-      //   render.textures = {}
     }
   }, [])
 
   useEffect(() => {
-    console.log('hello rendering')
-  }, [scene.current?.clientWidth])
+    let observer: IntersectionObserver
+    const { current } = scene
+
+    if (current) {
+      observer = new IntersectionObserver(handleScroll, { threshold: 0.7 })
+      observer.observe(current)
+
+      return () => observer && observer.disconnect()
+    }
+  }, [handleScroll])
 
   const handleDown = () => {
     isPressed.current = true
@@ -149,7 +205,7 @@ function MatterComposition() {
           restitution: 0.9,
           friction: 0.005,
           render: {
-            fillStyle: '#0000ff',
+            fillStyle: '#33ff33',
           },
         }
       )
@@ -158,12 +214,7 @@ function MatterComposition() {
   }
 
   return (
-    <div
-      onMouseDown={handleDown}
-      onMouseUp={handleUp}
-      onMouseMove={handleAddCircle}
-      className="w-full h-full"
-    >
+    <div className="w-full h-full">
       <div ref={scene} style={{ width: '100vw', height: '100vh' }} />
     </div>
   )

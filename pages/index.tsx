@@ -36,7 +36,7 @@ export default function Home() {
   const animatedItem_main_10 = useScrollFadeIn()
 
   useEffect(() => {
-    const MIN_DURATION = 5
+    const MIN_DURATION = 1
     const body = document.querySelector('body')
 
     function makeSnowflake() {
@@ -44,7 +44,7 @@ export default function Home() {
       //const snowSocks = document.createElement('div')
       const delay = Math.random() * 10
       const initialOpacity = Math.random()
-      const duration = Math.random() * 5 + MIN_DURATION
+      const duration = Math.random() * 1 + MIN_DURATION
 
       // snowSocks.classList.add('snowflake-void')
       // snowSocks.innerText = '🎁'
@@ -142,7 +142,7 @@ export default function Home() {
           style={{ height: '800px' }}
           className="min-h-screen w-full flex flex-col justify-center items-center"
         >
-          <MatterComposition></MatterComposition>
+          <MatterComposition {...animatedItem_main_10}></MatterComposition>
         </section>
         <section
           style={{
