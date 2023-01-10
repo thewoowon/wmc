@@ -32,6 +32,7 @@ export default function Home() {
   const animatedItem_main_7 = useScrollFadeIn()
   const animatedItem_main_8 = useScrollFadeInLeft()
   const animatedItem_main_9 = useScrollFadeInRight()
+  const animatedItem_main_10 = useScrollFadeIn()
 
   useEffect(() => {
     const MIN_DURATION = 5
@@ -140,7 +141,7 @@ export default function Home() {
           style={{ height: '800px' }}
           className="min-h-screen w-full flex flex-col justify-center items-center"
         >
-          <PressStart></PressStart>
+          <PressStart {...animatedItem_main_10}></PressStart>
         </section>
         <section
           style={{

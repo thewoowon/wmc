@@ -33,10 +33,17 @@ const Circle = styled.div`
   border-radius: 50%;
   position: absolute;
 `
-
-//, backgroundColor: `${rainbow[Math.ceil(Math.random() * 5)-1]}`
-
 const Rectangle = styled.div`
+  background-color: #33ff33;
+  position: absolute;
+`
+
+const pentagonal = styled.div`
+  background-color: #33ff33;
+  position: absolute;
+`
+
+const Hexagonal = styled.div`
   background-color: #33ff33;
   position: absolute;
 `
@@ -51,8 +58,14 @@ const rainbow = [
   '#9400D3',
 ]
 
-export function PressStart() {
-  const ref = useRef<HTMLDivElement>(null)
+export function PressStart({
+  ref,
+  style,
+}: {
+  ref: React.RefObject<HTMLDivElement>
+  style?: React.CSSProperties
+}) {
+  const dom = useRef<HTMLDivElement>(null)
   const dots = useRef<Circle[]>([])
   const [, setAnim] = useState(0)
 
@@ -61,8 +74,8 @@ export function PressStart() {
       Composite.clear(engine.world, false)
       dots.current = []
 
-      const width = ref.current?.clientWidth ?? 0
-      const height = ref.current?.clientHeight ?? 0
+      const width = dom.current?.clientWidth ?? 0
+      const height = dom.current?.clientHeight ?? 0
 
       const ground = Bodies.rectangle(width / 2 - 50, height, width, 100, {
         isStatic: true,
@@ -99,15 +112,15 @@ export function PressStart() {
 
       Composite.add(engine.world, [ground, ceiling, wallL, wallR])
     },
-    [ref.current?.clientWidth]
+    [dom.current?.clientWidth]
   )
 
   useEffect(() => {
     let unsubscribe: any
 
     function addDot() {
-      const width = ref.current?.clientWidth ?? 0
-      const height = ref.current?.clientHeight ?? 0
+      const width = dom.current?.clientWidth ?? 0
+      const height = dom.current?.clientHeight ?? 0
 
       const circ = Bodies.circle(
         Math.random() * width * 0.75 + 50,
@@ -128,7 +141,7 @@ export function PressStart() {
     return () => {
       clearTimeout(unsubscribe)
     }
-  }, [ref.current?.clientWidth])
+  }, [dom.current?.clientWidth])
 
   useEffect(
     function triggerAnimation() {
@@ -155,11 +168,11 @@ export function PressStart() {
         cancelAnimationFrame(unsubscribe)
       }
     },
-    [ref.current?.clientWidth]
+    [dom.current?.clientWidth]
   )
 
   return (
-    <Canvas ref={ref}>
+    <Canvas ref={dom}>
       {dots.current.map((dot, key) => (
         <Circle
           key={key}
