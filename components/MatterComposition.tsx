@@ -1,21 +1,12 @@
 import { useCallback, useEffect, useRef } from 'react'
 import { Engine, Render, Bodies, World, Runner } from 'matter-js'
 import { debounce } from 'lodash'
+import { rainbow } from 'constants/constant'
 
 function MatterComposition() {
   const scene = useRef<HTMLDivElement>(null)
-  const isPressed = useRef(false)
   const engine = useRef(Engine.create())
   const isIntersecting = useRef(false)
-  const rainbow = [
-    '#FF0000',
-    '#FF7F00',
-    '#FFFF00',
-    '#00FF00',
-    '#0000FF',
-    '#4B0082',
-    '#9400D3',
-  ]
 
   const handleScroll = useCallback(([entry]: IntersectionObserverEntry[]) => {
     const { current } = scene
@@ -136,32 +127,6 @@ function MatterComposition() {
     }
   }, [])
 
-  // const handleResize = debounce(() =>{
-  //       const cw = window.innerWidth
-  //       const ch = window.innerHeight
-
-  //       const render = Render.create({
-  //       element: scene.current ?? new HTMLDivElement(),
-  //       engine: engine.current,
-  //       options: {
-  //           width: cw,
-  //           height: ch,
-  //           wireframes: false,
-  //           background: 'transparent'
-  //       }
-  //       })
-
-  //       World.add(engine.current.world, [
-  //       Bodies.rectangle(cw / 2,0, cw, 20, { isStatic: true, render: { fillStyle: 'blue' } }),
-  //       Bodies.rectangle(0, ch / 2, 20, ch, { isStatic: true, render: { fillStyle: 'blue' }  }),
-  //       Bodies.rectangle(cw / 2, ch, cw, 20, { isStatic: true, render: { fillStyle: 'blue' }  }),
-  //       Bodies.rectangle(cw, ch / 2, 20, ch, { isStatic: true, render: { fillStyle: 'blue' }  })
-  //       ])
-  //       Runner.run(engine.current)
-  //       Render.run(render)
-
-  // },1000)
-
   useEffect(() => {
     const cw = window.innerWidth
     const ch = window.innerHeight
@@ -266,33 +231,6 @@ function MatterComposition() {
       return () => observer && observer.disconnect()
     }
   }, [handleScroll])
-
-  const handleDown = () => {
-    isPressed.current = true
-  }
-
-  const handleUp = () => {
-    isPressed.current = false
-  }
-
-  const handleAddCircle = (e: any) => {
-    if (isPressed.current) {
-      const ball = Bodies.circle(
-        e.clientX,
-        e.clientY,
-        10 + Math.random() * 30,
-        {
-          mass: 10,
-          restitution: 0.9,
-          friction: 0.005,
-          render: {
-            fillStyle: '#33ff33',
-          },
-        }
-      )
-      World.add(engine.current.world, [ball])
-    }
-  }
 
   return (
     <div className="w-full h-full">
